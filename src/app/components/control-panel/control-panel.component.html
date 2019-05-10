@@ -1,0 +1,8 @@
+<div class="format-actions">
+  <button *ngFor="let control of controls"
+          [class.format-actions__button--active]="control.isActive"
+          type="button"
+          (click)="emitTransformation(control)">
+    {{ control.label }}
+  </button>
+</div>

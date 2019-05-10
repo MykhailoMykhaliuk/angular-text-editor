@@ -1,0 +1,30 @@
+<div class="synonyms">
+
+  <div *ngIf="isValidWord(targetWord)">
+    <p class="synonyms__target-word">{{ targetWord }}</p>
+  
+    <button class="synonyms__load-button"
+            (click)="loadSynonyms(targetWord)"
+            [attr.disabled]="areSynonymsLoaded() ? '' : null">
+      Load synonyms
+    </button>
+  
+    <div *ngIf="!loading" class="synonyms__wrapper">
+      <div *ngFor="let synonym of synonyms"
+            class="synonyms__word"
+            (click)="replaceWord($event, synonym)">
+        {{ synonym.word }}
+      </div>
+    </div>
+
+    <div *ngIf="loading">
+      Loading...
+    </div>
+  </div>
+
+  <p *ngIf="!isValidWord(targetWord)"
+     class="synonyms__invalid-word">
+    Word is not valid. Please, select single word to work with.
+  </p>
+  
+</div>

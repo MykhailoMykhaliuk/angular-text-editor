@@ -1,0 +1,22 @@
+<div class="text-editor">
+  <app-control-panel (applyTransformation)="executeCommand($event); updateControlActivationStatuses()"></app-control-panel>
+
+  <div class="text-editor__wrapper" [contextMenu]="basicMenu">
+    <div #editor
+          id="editor"
+          class="text-editor__textarea"
+          contenteditable
+          (click)="updateControlActivationStatuses()"
+          (keyup)="updateControlActivationStatuses()">
+      {{ content }}
+    </div>
+  </div>
+
+  <context-menu>
+    <ng-template contextMenuItem passive="true">
+      <app-synonyms [targetWord]="getSelectedWord()"
+                    (wordChange)="replaceWord($event)">
+      </app-synonyms>
+    </ng-template>
+  </context-menu>
+</div>

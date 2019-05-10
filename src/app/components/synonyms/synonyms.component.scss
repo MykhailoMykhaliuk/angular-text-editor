@@ -1,0 +1,71 @@
+.synonyms {
+  max-height: 350px;
+  width: 250px;
+  border: solid 1px #333;
+  background: #fff;
+  padding: 20px;
+  font-size: 14px;
+  text-transform: initial;
+
+  &__target-word {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  &__invalid-word {
+    color: red;
+    white-space: normal;
+  }
+
+  &__load-button {
+    margin: 10px 0;
+  }
+
+  &__wrapper {
+    max-height: 150px;
+    overflow: scroll;
+    text-align: left;
+    font-size: 14px;
+    padding: 0 20px;
+  }
+
+  &__word {
+    cursor: pointer;
+    user-select: none;
+    padding: 5px 0;
+    font-size: 16px;
+  }
+}
+
+/deep/ .ngx-contextmenu .dropdown-menu {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+/deep/ .ngx-contextmenu .passive {
+  padding: 10px 0;
+}
+
+/deep/ .ngx-contextmenu li {
+  display: block;
+  border-top: solid 1px chartreuse;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/deep/ .ngx-contextmenu li:first-child {
+  border-top:none;
+}
+
+/deep/ .ngx-contextmenu a {
+  color:chartreuse;
+  display: block;
+  padding: 0.5em 1em;
+}
+
+/deep/ .ngx-contextmenu a:hover {
+  color:darkgreen;
+  background-color:chartreuse;
+}
