@@ -54,6 +54,7 @@ export class TextEditorComponent implements OnInit {
   }
 
   deleteContents(range: Range): Range {
+    // unfortunately side effect is needed
     range.deleteContents();
     return range;
   }
